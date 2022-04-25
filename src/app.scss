@@ -1,0 +1,33 @@
+.app {
+    height: 100vh;
+
+    .sections {
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: brown;
+        position: relative;
+        top: 70px;
+
+        // When scrolling 50% into the next section, it will snap to whole next section. 
+        scroll-snap-type: y mandatory;
+
+        //Getting rid of the scrollbar
+
+        // For FireFox
+        scrollbar-width: none; 
+
+        //For Explorer and Chrome
+        &::-webkit-scrollbar{
+            display: none;
+        }
+
+        // For each component:
+        > *{
+            width: 100vw;
+            height: calc(100vh - 70px);
+            scroll-snap-align: start;
+
+        }
+
+    }
+}
